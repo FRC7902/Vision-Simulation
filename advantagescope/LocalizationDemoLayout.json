@@ -1,0 +1,299 @@
+{
+  "hubs": [
+    {
+      "x": 0,
+      "y": 30,
+      "width": 1500,
+      "height": 950,
+      "state": {
+        "sidebar": {
+          "width": 300,
+          "expanded": [
+            "/Localization",
+            "/Vision",
+            "/Simulation",
+            "/Tuning"
+          ]
+        },
+        "tabs": {
+          "selected": 1,
+          "tabs": [
+            {
+              "type": 0,
+              "title": "",
+              "controller": null,
+              "controllerUUID": "fb7902locdocs0000000000000000000",
+              "renderer": "",
+              "controlsHeight": 0
+            },
+            {
+              "type": 3,
+              "title": "3D Localization",
+              "controller": {
+                "sources": [
+                  {
+                    "type": "robot",
+                    "logKey": "NT:/Localization/GroundTruthPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "model": "2026 KitBot"
+                    }
+                  },
+                  {
+                    "type": "vision",
+                    "logKey": "NT:/Vision/VisibleTagPoses",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "color": "#00ff00",
+                      "size": "normal"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/OdometryPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "model": "2026 KitBot",
+                      "color": "#ff0000"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/FusedPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "model": "2026 KitBot",
+                      "color": "#00ffff"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/VisionPose",
+                    "logType": "Pose2d[]",
+                    "visible": true,
+                    "options": {
+                      "model": "2026 KitBot",
+                      "color": "#ffff00"
+                    }
+                  },
+                  {
+                    "type": "trajectory",
+                    "logKey": "NT:/Vision/CameraRays",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "color": "#ff00ff",
+                      "size": "bold"
+                    }
+                  },
+                  {
+                    "type": "axes",
+                    "logKey": "NT:/Vision/CameraPose",
+                    "logType": "Pose3d",
+                    "visible": true,
+                    "options": {}
+                  }
+                ],
+                "game": "FRC:2026 Field"
+              },
+              "controllerUUID": "fb7902loc3dfield00000000000000001",
+              "renderer": null,
+              "controlsHeight": 220
+            },
+            {
+              "type": 2,
+              "title": "2D Localization",
+              "controller": {
+                "sources": [
+                  {
+                    "type": "robot",
+                    "logKey": "NT:/Localization/GroundTruthPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "bumpers": ""
+                    }
+                  },
+                  {
+                    "type": "vision",
+                    "logKey": "NT:/Vision/VisibleTagPoses",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "color": "#00ff00",
+                      "size": "normal"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/OdometryPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "color": "#ff0000"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/FusedPose",
+                    "logType": "Pose2d",
+                    "visible": true,
+                    "options": {
+                      "color": "#00ffff"
+                    }
+                  },
+                  {
+                    "type": "ghost",
+                    "logKey": "NT:/Localization/VisionPose",
+                    "logType": "Pose2d[]",
+                    "visible": true,
+                    "options": {
+                      "color": "#ffff00"
+                    }
+                  },
+                  {
+                    "type": "trajectory",
+                    "logKey": "NT:/Vision/CameraRays",
+                    "logType": "Pose3d[]",
+                    "visible": true,
+                    "options": {
+                      "color": "#ff00ff",
+                      "size": "bold"
+                    }
+                  },
+                  {
+                    "type": "trajectoryLegacy",
+                    "logKey": "NT:/SmartDashboard/Localization Field/Limelight Raycasts",
+                    "logType": "NumberArray",
+                    "visible": true,
+                    "options": {
+                      "color": "#ff8c00",
+                      "size": "normal",
+                      "format": "Pose2d",
+                      "units": "radians"
+                    }
+                  }
+                ],
+                "field": "FRC:2026 Field",
+                "orientation": 0,
+                "size": "medium"
+              },
+              "controllerUUID": "fb7902loc2dfield00000000000000002",
+              "renderer": null,
+              "controlsHeight": 220
+            },
+            {
+              "type": 1,
+              "title": "Localization Error",
+              "controller": {
+                "leftSources": [
+                  {
+                    "type": "smooth",
+                    "logKey": "NT:/Localization/OdometryErrorMeters",
+                    "logType": "Number",
+                    "visible": true,
+                    "options": {
+                      "color": "#e5b31b",
+                      "size": "normal"
+                    }
+                  },
+                  {
+                    "type": "smooth",
+                    "logKey": "NT:/Localization/FusedErrorMeters",
+                    "logType": "Number",
+                    "visible": true,
+                    "options": {
+                      "color": "#2b66a2",
+                      "size": "normal"
+                    }
+                  }
+                ],
+                "rightSources": [
+                  {
+                    "type": "smooth",
+                    "logKey": "NT:/Localization/OdometryHeadingErrorDeg",
+                    "logType": "Number",
+                    "visible": true,
+                    "options": {
+                      "color": "#af2437",
+                      "size": "normal"
+                    }
+                  },
+                  {
+                    "type": "smooth",
+                    "logKey": "NT:/Localization/FusedHeadingErrorDeg",
+                    "logType": "Number",
+                    "visible": true,
+                    "options": {
+                      "color": "#80588e",
+                      "size": "normal"
+                    }
+                  }
+                ],
+                "discreteSources": [
+                  {
+                    "type": "stripes",
+                    "logKey": "NT:/Vision/HasTarget",
+                    "logType": "Boolean",
+                    "visible": true,
+                    "options": {
+                      "color": "#4b9b4b"
+                    }
+                  },
+                  {
+                    "type": "stripes",
+                    "logKey": "NT:/Vision/FusionEnabled",
+                    "logType": "Boolean",
+                    "visible": true,
+                    "options": {
+                      "color": "#2b66a2"
+                    }
+                  },
+                  {
+                    "type": "stripes",
+                    "logKey": "NT:/Simulation/DriftEnabled",
+                    "logType": "Boolean",
+                    "visible": true,
+                    "options": {
+                      "color": "#af2437"
+                    }
+                  },
+                  {
+                    "type": "stripes",
+                    "logKey": "NT:/Vision/Status",
+                    "logType": "String",
+                    "visible": true,
+                    "options": {
+                      "color": "#80588e"
+                    }
+                  }
+                ],
+                "leftLockedRange": null,
+                "rightLockedRange": null,
+                "leftUnitConversion": {
+                  "autoTarget": null,
+                  "preset": null
+                },
+                "rightUnitConversion": {
+                  "autoTarget": null,
+                  "preset": null
+                },
+                "leftFilter": 0,
+                "rightFilter": 0
+              },
+              "controllerUUID": "fb7902locgraph000000000000000003",
+              "renderer": null,
+              "controlsHeight": 200
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "satellites": [],
+  "version": "26.0.0"
+}
