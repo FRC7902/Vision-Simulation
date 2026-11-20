@@ -9,7 +9,7 @@ import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.util.Units;
 
 /**
- * Every number a student might want to change lives here.
+ * Every tunable number in the project lives here.
  *
  * <p>Units: meters, seconds, radians unless a name says otherwise. Field coordinates are WPILib
  * "blue origin": (0, 0) is the corner at the blue alliance wall, +X points toward the red alliance,
@@ -129,8 +129,8 @@ public final class Constants {
      *
      * <p>The camera sends 50 measurements per second, so each one should only nudge the estimate a
      * little; the estimator then averages out the noise. These values were chosen by measurement
-     * (see LocalizationDemoTest): standing still the fused pose wobbles about 0.7 cm, and a 0.5 m
-     * error is corrected in about 0.3 s. Larger = smoother but slower correction.
+     * (see LocalizationSimulationTest): standing still the fused pose wobbles about 0.5 cm, and a
+     * 0.5 m / 10 deg error is corrected in about 0.6 s. Larger = smoother but slower correction.
      */
     public static final double VISION_STDDEV_XY_BASE = 0.75;
 
@@ -160,9 +160,9 @@ public final class Constants {
     private Fusion() {}
   }
 
-  /** Deliberate odometry error used for the classroom demonstration. */
+  /** Deliberate odometry error, used to show how vision fusion corrects drift. */
   public static final class Drift {
-    /** Default severity multiplier (0 = no effect, 1 = normal demo, 3 = extreme). */
+    /** Default severity multiplier (0 = no effect, 1 = default, 3 = extreme). */
     public static final double DEFAULT_SEVERITY = 1.0;
 
     /**

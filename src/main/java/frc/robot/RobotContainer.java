@@ -95,7 +95,7 @@ public class RobotContainer {
                 () -> Tunables.VISION_FUSION_ENABLED.set(!Tunables.VISION_FUSION_ENABLED.get())));
     controller.x().onTrue(instant("Inject drift", () -> Tunables.DRIFT_ENABLED.set(true)));
     controller.y().onTrue(instant("Stop drift", () -> Tunables.DRIFT_ENABLED.set(false)));
-    controller.start().onTrue(instant("Reset demo", this::resetDemo));
+    controller.start().onTrue(instant("Reset all", this::resetAll));
     controller
         .back()
         .onTrue(
@@ -190,9 +190,9 @@ public class RobotContainer {
   }
 
   private void handleNetworkTablesButtons() {
-    if (Tunables.RESET_DEMO.get()) {
-      Tunables.RESET_DEMO.set(false);
-      resetDemo();
+    if (Tunables.RESET_ALL.get()) {
+      Tunables.RESET_ALL.set(false);
+      resetAll();
     }
     if (Tunables.RESET_POSE.get()) {
       Tunables.RESET_POSE.set(false);
@@ -202,7 +202,7 @@ public class RobotContainer {
 
   /**
    * Puts the robot back at the start pose and makes ground truth, odometry and fused pose agree
-   * again. Clears accumulated drift but keeps the demo settings (fusion on/off, drift on/off).
+   * again. Clears accumulated drift but keeps the settings (fusion on/off, drift on/off).
    */
   public void resetPose() {
     Pose2d pose = Constants.Drive.START_POSE;
@@ -219,8 +219,8 @@ public class RobotContainer {
     rotLimiter.reset(0);
   }
 
-  /** Full reset: pose, accumulated drift, counters and every demo setting. */
-  public void resetDemo() {
+  /** Full reset: pose, accumulated drift, counters and every setting. */
+  public void resetAll() {
     Tunables.restoreDefaults();
     localization.resetCounters();
     resetPose();
@@ -231,7 +231,7 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return Commands.print("No autonomous command: this project is a localization demo.");
+    return Commands.print("No autonomous command: this project is a localization simulation.");
   }
 
   // ---- Accessors used by the automated tests.

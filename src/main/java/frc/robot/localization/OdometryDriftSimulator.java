@@ -6,7 +6,7 @@ import frc.robot.Constants;
 
 /**
  * Deliberately corrupts the wheel encoder and gyro readings <i>before</i> they reach the pose
- * estimators, so students can watch odometry drift away from reality.
+ * estimators, so odometry visibly drifts away from reality.
  *
  * <p>Two realistic error sources are modeled while drift is enabled:
  *
@@ -43,7 +43,7 @@ public class OdometryDriftSimulator {
    * Turns this loop's raw sensor readings into the readings the estimators will see.
    *
    * @param enabled whether to add new error this loop
-   * @param severity error multiplier (0 = none, 1 = normal demo)
+   * @param severity error multiplier (0 = none, 1 = default)
    */
   public Measurement apply(
       SwerveModulePosition[] rawPositions, Rotation2d rawGyroYaw, boolean enabled, double severity) {

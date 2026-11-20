@@ -6,7 +6,7 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 /**
- * Live-editable demo settings, published under the NetworkTables table {@code /Tuning}.
+ * Live-editable settings, published under the NetworkTables table {@code /Tuning}.
  *
  * <p>These entries are the single source of truth: controller buttons write to them, and you can
  * also change them from AdvantageScope (tuning mode), Glass, Elastic or the simulator GUI's
@@ -31,12 +31,12 @@ public final class Tunables {
   /** Set to true to reset only the robot pose (same as the A button). Clears itself. */
   public static final BooleanEntry RESET_POSE = bool("ResetPose", false);
 
-  /** Set to true to reset the whole demo (same as the Start button). Clears itself. */
-  public static final BooleanEntry RESET_DEMO = bool("ResetDemo", false);
+  /** Set to true to reset everything (same as the Start button). Clears itself. */
+  public static final BooleanEntry RESET_ALL = bool("ResetAll", false);
 
   private Tunables() {}
 
-  /** Restores every demo setting to its default value. */
+  /** Restores every setting to its default value. */
   public static void restoreDefaults() {
     VISION_FUSION_ENABLED.set(true);
     USE_MEGATAG2.set(false);

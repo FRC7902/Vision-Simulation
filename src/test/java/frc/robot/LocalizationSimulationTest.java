@@ -25,16 +25,16 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
- * End-to-end test of the whole classroom demo, using the real Robot class, the real YAGSL physics
+ * End-to-end test of the whole localization simulation, using the real Robot class, the real YAGSL physics
  * simulation, YALL's LimelightSim, and a simulated Xbox controller. The loop is paced in real time (20 ms per loop), exactly like
  * desktop simulation. (SimHooks.stepTiming was tried and blocked forever in this project, most
  * likely because a vendor library holds a native HAL notifier that never reports idle.)
  *
- * <p>The tests run in order and share one robot, like one continuous demonstration.
+ * <p>The tests run in order and share one robot, like one continuous simulation session.
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class LocalizationDemoTest {
+class LocalizationSimulationTest {
   private Robot robot;
   private RobotContainer container;
   private XboxControllerSim xbox;
@@ -245,9 +245,9 @@ class LocalizationDemoTest {
     driveSquare();
     assertTrue(number("/Localization/OdometryErrorMeters") > 0.3);
 
-    Tunables.RESET_DEMO.set(true); // same as pressing Start
+    Tunables.RESET_ALL.set(true); // same as pressing Start
     step(0.04);
-    assertFalse(Tunables.RESET_DEMO.get());
+    assertFalse(Tunables.RESET_ALL.get());
     assertTrue(Tunables.VISION_FUSION_ENABLED.get());
     assertFalse(Tunables.DRIFT_ENABLED.get());
     assertEquals(Constants.Drift.DEFAULT_SEVERITY, Tunables.DRIFT_SEVERITY.get());

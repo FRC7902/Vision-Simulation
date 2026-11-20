@@ -31,7 +31,7 @@ public class SwerveSubsystem extends SubsystemBase {
   /**
    * Added to the raw gyro to get a field-relative heading for <i>driving</i>. Set on every reset.
    * Driving uses the clean gyro (not the drifted one) so the controls stay predictable when we
-   * inject odometry error during the lesson.
+   * inject odometry error.
    */
   private Rotation2d driverHeadingOffset = Rotation2d.kZero;
 
